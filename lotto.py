@@ -7,20 +7,25 @@ import random
 def main():
     print('\n')
     contest_rules = load_contest()
-    play = input('Which game would you like to play?')
+    play = input('Which game would you like to play? ').lower()
 
-    if play == 'Megaball':
-        game = contest_rules["contests"][0]['name']
-        ball_amount = int(contest_rules["contests"][0]['amount']) + 1
-        special_ball = contest_rules["contests"][0]['extra']
-        first_ball = contest_rules["contests"][0]['start']
-        last_ball = contest_rules["contests"][0]['end']
-        first_special = contest_rules["contests"][0]['extra_start']
-        last_special = contest_rules["contests"][0]['extra_end']
+    if play == 'megaball':
+        game = contest_rules['contests'][0]['name']
+        ball_amount = int(contest_rules['contests'][0]['amount']) + 1
+        special_ball = contest_rules['contests'][0]['extra']
+        first_ball = contest_rules['contests'][0]['start']
+        last_ball = contest_rules['contests'][0]['end']
+        first_special = contest_rules['contests'][0]['extra_start']
+        last_special = contest_rules['contests'][0]['extra_end']
 
-    elif play == 'Powerball':
-        ball_amount = int(contest_rules["contests"][1]['amount']) + 1
-
+    elif play == 'powerball':
+        game = contest_rules['contests'][1]['name']
+        ball_amount = int(contest_rules['contests'][1]['amount']) + 1
+        special_ball = contest_rules['contests'][1]['extra']
+        first_ball = contest_rules['contests'][1]['start']
+        last_ball = contest_rules['contests'][1]['end']
+        first_special = contest_rules['contests'][1]['extra_start']
+        last_special = contest_rules['contests'][1]['extra_end']
     else:
         print('Pick a game.')
 
