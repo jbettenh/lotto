@@ -3,7 +3,6 @@ import json
 import random
 
 
-
 def main():
     print('\n')
     contest_rules = load_contest()
@@ -11,7 +10,7 @@ def main():
 
     if play == 'megaball':
         game = contest_rules['contests'][0]['name']
-        ball_amount = int(contest_rules['contests'][0]['amount']) + 1
+        ball_amount =  contest_rules['contests'][0]['amount'] + 1
         special_ball = contest_rules['contests'][0]['extra']
         first_ball = contest_rules['contests'][0]['start']
         last_ball = contest_rules['contests'][0]['end']
@@ -20,17 +19,17 @@ def main():
 
     elif play == 'powerball':
         game = contest_rules['contests'][1]['name']
-        ball_amount = int(contest_rules['contests'][1]['amount']) + 1
+        ball_amount = contest_rules['contests'][1]['amount'] + 1
         special_ball = contest_rules['contests'][1]['extra']
         first_ball = contest_rules['contests'][1]['start']
         last_ball = contest_rules['contests'][1]['end']
         first_special = contest_rules['contests'][1]['extra_start']
         last_special = contest_rules['contests'][1]['extra_end']
+
     else:
         print('Pick a game.')
 
-
-    print(f'Loading config... for {game}')
+    print(f'Loading config for {game}')
     print('Printing ticket.....\n')
 
     for ball in range(1, ball_amount):
@@ -51,8 +50,6 @@ def load_contest():
 
     with open(filename, 'r', encoding='utf-8') as fin:
         return json.load(fin)
-
-
 
 
 if __name__ == '__main__':
