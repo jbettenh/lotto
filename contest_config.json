@@ -1,0 +1,26 @@
+{
+  "contests":
+  [
+    {
+      "name": "Megaball",
+      "amount": 5,
+      "start": 1,
+      "end": 70,
+      "extra": 1,
+      "extra_start": 1,
+      "extra_end": 25
+    },
+    {
+      "name": "Powerball",
+      "amount": 5,
+      "start": 1,
+      "end": 69,
+      "extra": 1,
+      "extra_start": 1,
+      "extra_end": 26
+      }
+  ]
+}
+
+
+
