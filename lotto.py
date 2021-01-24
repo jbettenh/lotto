@@ -23,6 +23,7 @@ def load_contest():
 
 def gen_lotto_numbers(choice):
     contest_rules = load_contest()
+    lotto_numbers = []
 
     if choice == 'megaball':
         game = contest_rules['contests'][0]['name']
@@ -33,7 +34,7 @@ def gen_lotto_numbers(choice):
         first_special = contest_rules['contests'][0]['extra_start']
         last_special = contest_rules['contests'][0]['extra_end']
 
-    elif choic == 'powerball':
+    elif choice == 'powerball':
         game = contest_rules['contests'][1]['name']
         ball_amount = contest_rules['contests'][1]['amount'] + 1
         special_ball = contest_rules['contests'][1]['extra']
@@ -49,12 +50,18 @@ def gen_lotto_numbers(choice):
     print('Printing ticket.....\n')
 
     for ball in range(1, ball_amount):
-        num = random.randint(first_ball, last_ball)
-        print(f'Number {ball} is {num}')
+        lotto_numbers.append(random.randint(first_ball, last_ball))
 
     for special in range(special_ball):
-        special_num = random.randint(first_special, last_special)
-        print(f'{game}  is {special_num}')
+        lotto_numbers.append(random.randint(first_special, last_special))
+
+    print_ticket(lotto_numbers)
+
+
+def print_ticket(numbers):
+    for idx, ball in enumerate(numbers):
+        print(f'Number {idx + 1} is {ball}')
+        # print(f'{game}  is {special_num}')
 
 
 if __name__ == '__main__':
