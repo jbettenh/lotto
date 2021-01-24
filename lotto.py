@@ -7,7 +7,8 @@ def main():
     print('\n')
 
     play = input('Which game would you like to play? ').lower()
-    gen_lotto_numbers(play)
+    picks = gen_lotto_numbers(play)
+    print_ticket(picks)
 
 
 def load_contest():
@@ -55,7 +56,7 @@ def gen_lotto_numbers(choice):
     for special in range(special_ball):
         lotto_numbers.append(random.randint(first_special, last_special))
 
-    print_ticket(lotto_numbers)
+    return lotto_numbers
 
 
 def print_ticket(numbers):
