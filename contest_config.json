@@ -18,6 +18,15 @@
       "extra": 1,
       "extra_start": 1,
       "extra_end": 26
+    },
+    {
+      "name": "EuroJackpot",
+      "amount": 5,
+      "start": 1,
+      "end": 50,
+      "extra": 2,
+      "extra_start": 1,
+      "extra_end": 10
       }
   ]
 }
