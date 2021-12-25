@@ -29,6 +29,7 @@ def load_contest():
 def gen_lotto_numbers(choice):
     contest_rules = load_contest()
     lotto_numbers = []
+    current_pick = 0
 
     if choice == 'megaball':
         game = contest_rules['contests'][0]['name']
@@ -63,7 +64,12 @@ def gen_lotto_numbers(choice):
     print('Printing ticket.....\n')
 
     for ball in range(1, ball_amount):
-        lotto_numbers.append(random.randint(first_ball, last_ball))
+        current_pick = random.randint(first_ball, last_ball)
+
+        while current_pick in lotto_numbers:
+            current_pick = random.randint(first_ball, last_ball)
+
+        lotto_numbers.append(current_pick)
 
     for special in range(special_ball):
         lotto_numbers.append(random.randint(first_special, last_special))
@@ -79,3 +85,8 @@ def print_ticket(numbers):
 
 if __name__ == '__main__':
     main()
+
+    """
+     while current_pick not in lotto_numbers:
+            current_pick = random.randint(first_ball, last_ball)
+            """
