@@ -16,5 +16,6 @@ __pycache__/
 # Environments
 /venv/*
 /.idea/*
+/config_email.yaml
 
 # File outputs
