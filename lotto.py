@@ -41,33 +41,22 @@ def gen_lotto_numbers(choice):
     lotto_numbers = []
 
     if choice == 'megaball':
-        game = contest_rules['contests'][0]['name']
-        ball_amount = contest_rules['contests'][0]['amount'] + 1
-        special_ball = contest_rules['contests'][0]['extra']
-        first_ball = contest_rules['contests'][0]['start']
-        last_ball = contest_rules['contests'][0]['end']
-        first_special = contest_rules['contests'][0]['extra_start']
-        last_special = contest_rules['contests'][0]['extra_end']
-
+        index = 0
     elif choice == 'powerball':
-        game = contest_rules['contests'][1]['name']
-        ball_amount = contest_rules['contests'][1]['amount'] + 1
-        special_ball = contest_rules['contests'][1]['extra']
-        first_ball = contest_rules['contests'][1]['start']
-        last_ball = contest_rules['contests'][1]['end']
-        first_special = contest_rules['contests'][1]['extra_start']
-        last_special = contest_rules['contests'][1]['extra_end']
-
+        index = 1
     elif choice == 'eurojackpot':
-        game = contest_rules['contests'][2]['name']
-        ball_amount = contest_rules['contests'][2]['amount'] + 1
-        special_ball = contest_rules['contests'][2]['extra']
-        first_ball = contest_rules['contests'][2]['start']
-        last_ball = contest_rules['contests'][2]['end']
-        first_special = contest_rules['contests'][2]['extra_start']
-        last_special = contest_rules['contests'][2]['extra_end']
+        index = 2
     else:
         print('Pick a game.')
+
+    game = contest_rules['contests'][index]['name']
+    ball_amount = contest_rules['contests'][index]['amount'] + 1
+    special_ball = contest_rules['contests'][index]['extra']
+    first_ball = contest_rules['contests'][index]['start']
+    last_ball = contest_rules['contests'][index]['end']
+    first_special = contest_rules['contests'][index]['extra_start']
+    last_special = contest_rules['contests'][index]['extra_end']
+
 
     print(f'Loading config for {game}')
     print('Printing ticket.....\n')
